@@ -18,17 +18,13 @@ import { Profile } from '../interfaces/profile';
 import { SanitizedConfig } from '../interfaces/sanitized-config';
 import { getInitialTheme, getSanitizedConfig, setupHotjar } from '../utils';
 import AvatarCard from './avatar-card';
-import BlogCard from './blog-card';
-import CertificationCard from './certification-card';
 import DetailsCard from './details-card';
 import EducationCard from './education-card';
 import ErrorPage from './error-page';
 import ExperienceCard from './experience-card';
-import ExternalProjectCard from './external-project-card';
 import Footer from './footer';
 import GithubProjectCard from './github-project-card';
 import HeadTagEditor from './head-tag-editor';
-import PublicationCard from './publication-card';
 import SkillCard from './skill-card';
 import ThemeChanger from './theme-changer';
 
@@ -225,28 +221,10 @@ const GitProfile = ({ config }: { config: Config }) => {
                         skills={sanitizedConfig.skills}
                       />
                     )}
-                    {sanitizedConfig.educations.length !== 0 && (
-                      <EducationCard
-                        loading={loading}
-                        educations={sanitizedConfig.educations}
-                      />
-                    )}
-                    {sanitizedConfig.experiences.length !== 0 && (
-                      <ExperienceCard
-                        loading={loading}
-                        experiences={sanitizedConfig.experiences}
-                      />
-                    )}
-                    {sanitizedConfig.certifications.length !== 0 && (
-                      <CertificationCard
-                        loading={loading}
-                        certifications={sanitizedConfig.certifications}
-                      />
-                    )}
                   </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1">
-                  <div className="grid grid-cols-1 gap-6">
+                  <div className="grid gap-6">
                     {sanitizedConfig.projects.github.display && (
                       <GithubProjectCard
                         header={sanitizedConfig.projects.github.header}
@@ -257,28 +235,16 @@ const GitProfile = ({ config }: { config: Config }) => {
                         googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
                       />
                     )}
-                    {sanitizedConfig.publications.length !== 0 && (
-                      <PublicationCard
+                    {sanitizedConfig.educations.length !== 0 && (
+                      <EducationCard
                         loading={loading}
-                        publications={sanitizedConfig.publications}
+                        educations={sanitizedConfig.educations}
                       />
                     )}
-                    {sanitizedConfig.projects.external.projects.length !==
-                      0 && (
-                        <ExternalProjectCard
-                          loading={loading}
-                          header={sanitizedConfig.projects.external.header}
-                          externalProjects={
-                            sanitizedConfig.projects.external.projects
-                          }
-                          googleAnalyticId={sanitizedConfig.googleAnalytics.id}
-                        />
-                      )}
-                    {sanitizedConfig.blog.display && (
-                      <BlogCard
+                    {sanitizedConfig.experiences.length !== 0 && (
+                      <ExperienceCard
                         loading={loading}
-                        googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
-                        blog={sanitizedConfig.blog}
+                        experiences={sanitizedConfig.experiences}
                       />
                     )}
                   </div>
