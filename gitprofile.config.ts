@@ -65,16 +65,21 @@ const CONFIG = {
     fileUrl: '', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'Python',
+    'Python 🐍',
+    'FastAPI',
     'JavaScript',
     'Node.js',
-    'Nest.js',
+    'Express.js',
     'MySQL',
     'PostgreSQL',
+    'SQLite',
     'Git',
+    'Github',
     'Docker',
+    'Kubernetes',
     'HTML/CSS',
     'Linux',
+    'Azure',
   ],
   experiences: [
     {
