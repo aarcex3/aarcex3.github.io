@@ -60,7 +60,7 @@ const CONFIG = {
     telegram: '',
     website: '',
     phone: '',
-    email: 'agustinarceprincich@gmail.com',
+    email: '',
   },
   resume: {
     fileUrl: '', // Empty fileUrl will hide the `Download Resume` button.
@@ -167,12 +167,19 @@ const CONFIG = {
       degree: 'BSc Business Informatic',
       from: '2020',
       to: '2023',
+      relevantCourses: [
+        'Open & Big Data',
+        'IT Security',
+        'Full Stack Software Project',
+        'Software Management',
+      ],
     },
     {
       institution: 'Aalen University',
       degree: 'BSc Business Informatic',
       from: '2022',
       to: '2023',
+      relevantCourses: ['Software Quality'],
     },
   ],
   publications: [],

@@ -1,15 +1,17 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { SanitizedEducation } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
-
 const ListItem = ({
   time,
   degree,
   institution,
+  relevantCourses,
 }: {
   time: React.ReactNode;
   degree?: React.ReactNode;
   institution?: React.ReactNode;
+  relevantCourses?: React.ReactNode;
 }) => (
   <li className="mb-5 ml-4">
     <div
@@ -18,7 +20,13 @@ const ListItem = ({
     ></div>
     <div className="my-0.5 text-xs">{time}</div>
     <h3 className="font-semibold">{degree}</h3>
-    <div className="mb-4 font-normal">{institution}</div>
+    <div className="mb-1 font-normal">{institution}</div>
+    {relevantCourses && (
+      <div className="text-sm italic">
+        <span className="underline font-semibold text-sm">Relevant Courses</span>
+        <span className="italic text-sm">: {relevantCourses}</span>
+      </div>
+    )}
   </li>
 );
 
@@ -45,6 +53,7 @@ const EducationCard = ({
             className: 'my-1.5',
           })}
           institution={skeleton({ widthCls: 'w-6/12', heightCls: 'h-3' })}
+          relevantCourses={skeleton({ widthCls: 'w-6/12', heightCls: 'h-3' })}
         />,
       );
     }
@@ -66,20 +75,17 @@ const EducationCard = ({
         </div>
         <div className="text-base-content text-opacity-60">
           <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
-            {loading ? (
-              renderSkeleton()
-            ) : (
-              <>
-                {educations.map((item, index) => (
-                  <ListItem
-                    key={index}
-                    time={`${item.from} - ${item.to}`}
-                    degree={item.degree}
-                    institution={item.institution}
-                  />
-                ))}
-              </>
-            )}
+            {loading
+              ? renderSkeleton()
+              : educations.map((item, index) => (
+                <ListItem
+                  key={index}
+                  time={`${item.from} - ${item.to}`}
+                  degree={item.degree}
+                  institution={item.institution}
+                  relevantCourses={item.relevantCourses?.join(', ')}
+                />
+              ))}
           </ol>
         </div>
       </div>
