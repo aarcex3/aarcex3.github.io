@@ -27,6 +27,7 @@ const CONFIG = {
         // Properties for manually specifying projects
         projects: [
           'aarcex3/mygpo-clone',
+          'aarcex3/aiostipy',
           'aarcex3/magic-wormhole-microservice',
           'aarcex3/tweeter-clone-rails',
           'aarcex3/stock-api',
