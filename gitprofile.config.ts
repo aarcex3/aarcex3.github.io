@@ -29,7 +29,6 @@ const CONFIG = {
           'aarcex3/mygpo-clone',
           'aarcex3/aiostipy',
           'aarcex3/magic-wormhole-microservice',
-          'aarcex3/tweeter-clone-rails',
           'aarcex3/stock-api',
         ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
