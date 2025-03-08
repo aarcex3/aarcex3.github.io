@@ -25,12 +25,7 @@ const CONFIG = {
       },
       manual: {
         // Properties for manually specifying projects
-        projects: [
-          'aarcex3/mygpo-clone',
-          'aarcex3/aiostipy',
-          'aarcex3/magic-wormhole-microservice',
-          'aarcex3/stock-api',
-        ], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {},
@@ -83,6 +78,13 @@ const CONFIG = {
     'Azure',
   ],
   experiences: [
+    {
+      company: 'CLT SA',
+      position: 'QA Tester',
+      from: 'January 2025',
+      to: 'Today',
+      companyLink: 'https://www.clt.com.py',
+    },
     {
       company: 'Excelsis',
       position: 'Data  Analyst Intern',
